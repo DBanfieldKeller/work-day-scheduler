@@ -1,8 +1,12 @@
 // Dependencies
+var bannerDate = $('#currentDay');
+var currentDate = moment();
 
 // Data
 
 // Functions
+bannerDate.text(currentDate.format('LL'));
+
 
 // User Experience
 // GIVEN I am using a daily planner to create a schedule
