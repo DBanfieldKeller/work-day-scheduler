@@ -1,13 +1,30 @@
 // Dependencies
 var bannerDate = $('#currentDay');
-var currentDate = moment();
+var timeblocks = $('.timeblock');
+var hourSchedule = $('#schedule');
+
 
 // Data
+var currentDate = moment();
+var currentHour = moment().hour();
 
 // Functions
 bannerDate.text(currentDate.format('LL'));
 
 
+function testTime (){
+    hourSchedule.children().each(function() {
+        if (($(this).index()+9) < currentHour) {
+            $(this).children().eq(1).addClass('past');
+        } else if(($(this).index()+9) === currentHour) {
+            $(this).children().eq(1).addClass('present');
+        } else {
+            $(this).children().eq(1).addClass('future')
+        }
+    })
+}
+
+testTime()
 
 // User Experience
 // GIVEN I am using a daily planner to create a schedule
