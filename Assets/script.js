@@ -2,6 +2,8 @@
 var bannerDate = $('#currentDay');
 var timeblocks = $('.timeblock');
 var hourSchedule = $('#schedule');
+var eventBox = $('.eventbox');
+var saveButton = $('.saveBtn');
 
 
 // Data
@@ -11,9 +13,10 @@ var currentHour = moment().hour();
 // Functions
 bannerDate.text(currentDate.format('LL'));
 
-
+// check if time is past present or future
 function testTime (){
     hourSchedule.children().each(function() {
+        // with schedule starting at 9AM, index +9 will return the value of the timeslot for comparison with current hour
         if (($(this).index()+9) < currentHour) {
             $(this).children().eq(1).addClass('past');
         } else if(($(this).index()+9) === currentHour) {
@@ -25,6 +28,20 @@ function testTime (){
 }
 
 testTime()
+
+var timeslot = function (){
+    $(this).parent().index()+9
+}
+
+timeblocks.each(function(){
+    $(this).on('click','.saveBtn', function(){
+        var textbox = $(this).siblings().eq(1)
+        localStorage.setItem(textbox.attr('id'), textbox.text())
+    })
+})
+
+
+console.log(eventBox.text())
 
 // User Experience
 // GIVEN I am using a daily planner to create a schedule
