@@ -8,6 +8,7 @@ var currentDate = moment();
 bannerDate.text(currentDate.format('LL'));
 
 
+
 // User Experience
 // GIVEN I am using a daily planner to create a schedule
 // WHEN I open the planner
