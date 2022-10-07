@@ -8,4 +8,4 @@ A user can click on an hour block and input text. Upon clicking the save button,
 
 The live site can be accessed at:
 
-When viewed the page should appear as below(screenshot taken at 8:35pm): ![Landing Page](assets/images/screenshot1.PNG)
+When viewed the page should appear as below(screenshot taken at 8:35pm): ![Landing Page](assets/screenshot1.PNG)
